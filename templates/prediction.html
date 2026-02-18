@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetic Retinopathy Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- FLASH MESSAGE (LOGIN SUCCESS / ERRORS) -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, msg in messages %}
+    <div class="alert {{ category }}" id="flash-message">
+        {{ msg }}
+    </div>
+  {% endfor %}
+{% endwith %}
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Diabetic Retinopathy Classification</h2>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="main-container">
+
+    <!-- UPLOAD SECTION -->
+    <form method="POST" enctype="multipart/form-data" class="upload-box">
+
+        {% if image_url %}
+            <img src="{{ url_for('static', filename=image_url) }}" class="uploaded-image">
+        {% else %}
+            <div class="image-placeholder">Upload Image</div>
+        {% endif %}
+
+        <input type="file" name="image" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- PREDICTION RESULT -->
+    {% if prediction %}
+        <h3 class="result-text">
+            Diabetic Retinopathy Classification is :
+            <span>{{ prediction }}</span>
+        </h3>
+        <p>{{ explanation }}</p>
+    {% endif %}
+
+    <!-- STAGES SECTION -->
+    <div class="stages-container">
+
+        <div class="stage green">
+            <img src="{{ url_for('static', filename='sample/No_Dr.png') }}">
+            <p>No DR</p>
+        </div>
+
+        <div class="stage orange">
+            <img src="{{ url_for('static', filename='sample/mild.png') }}">
+            <p>Mild</p>
+        </div>
+
+        <div class="stage orange">
+            <img src="{{ url_for('static', filename='sample/moderate.png') }}">
+            <p>Moderate</p>
+        </div>
+
+        <div class="stage dark-orange">
+            <img src="{{ url_for('static', filename='sample/severe.png') }}">
+            <p>Severe</p>
+        </div>
+
+        <div class="stage red">
+            <img src="{{ url_for('static', filename='sample/proliferative.png') }}">
+            <p>Proliferative DR</p>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- AUTO-HIDE FLASH MESSAGE AFTER 3 SECONDS -->
+<script>
+    setTimeout(() => {
+        const flash = document.getElementById("flash-message");
+        if (flash) {
+            flash.style.opacity = "0";
+            setTimeout(() => flash.remove(), 500);
+        }
+    }, 3000);
+</script>
+
+</body>
+</html>

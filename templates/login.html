@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DR Login</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Auto hide flash messages -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".flash-message").forEach(msg => {
+            setTimeout(() => {
+                msg.style.opacity = "0";
+                msg.style.transform = "translateY(-10px)";
+                setTimeout(() => msg.remove(), 500);
+            }, 3000);
+        });
+    });
+    </script>
+</head>
+
+<body>
+
+<!-- FLASH MESSAGES -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, msg in messages %}
+      <div class="alert {{ category }} flash-message">{{ msg }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>Diabetic Retinopathy Classification</h2>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+</div>
+
+<!-- LOGIN CARD -->
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+        <!-- Avatar -->
+        <div class="auth-avatar">
+            <img src="{{ url_for('static', filename='sample/login.png') }}" alt="User">
+        </div>
+
+        <!-- Form -->
+        <form method="POST" action="{{ url_for('login') }}" autocomplete="off">
+
+            <input type="email" name="email" placeholder="Enter Email ID" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+
+            <button type="submit" class="dark-btn">Login</button>
+        </form>
+
+        <p class="auth-link">
+            Don’t have an account?
+            <a href="{{ url_for('register') }}">Register</a>
+        </p>
+
+    </div>
+</div>
+
+</body>
+</html>

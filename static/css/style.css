@@ -1,0 +1,490 @@
+/* ================= GLOBAL STYLES ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3, p {
+    margin: 0 0 15px 0;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    background: #333;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.navbar h2 {
+    font-size: 22px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    margin-left: 20px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f9a825;
+}
+
+/* ================= MAIN CONTAINER ================= */
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 80px);
+    padding: 20px;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: 26px;
+}
+
+.hero p {
+    font-size: 16px;
+}
+
+.hero .btn {
+    padding: 12px 25px;
+    background: #f9a825;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+.hero .btn:hover {
+    background: #f57f17;
+}
+/* ================= AUTH (LOGIN / REGISTER CARD) ================= */
+
+.auth-wrapper {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-card {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 60px 35px 40px;
+    border-radius: 14px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    text-align: center;
+    position: relative;
+}
+
+/* Avatar */
+.auth-card {
+    position: relative;
+    padding: 60px 30px 30px; /* extra top space for avatar */
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    width: 360px;
+}
+
+/* Avatar container */
+.auth-avatar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* Avatar image */
+.auth-avatar img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: none;
+    background: #fff;
+}
+
+
+/* Inputs */
+.auth-card input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+.auth-card input:focus {
+    outline: none;
+    border-color: #f9a825;
+}
+
+/* Dark Button */
+.dark-btn {
+    width: 100%;
+    padding: 12px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.dark-btn:hover {
+    background: #000;
+}
+
+/* Bottom link */
+.auth-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #f9a825;
+    font-weight: bold;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= INDEX PAGE IMAGE SECTION ================= */
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.image-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 500px;
+    text-align: center;
+}
+
+.image-box img {
+    width: 100%;
+    max-width: 1200px;
+    height: auto;
+}
+
+/* ================= ABOUT PROJECT ================= */
+
+.about-section {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.about-section h2 {
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    text-align: left;
+}
+
+.problem,
+.solution {
+    flex: 1;
+    min-width: 280px;
+}
+
+.problem h3,
+.solution h3 {
+    color: #f9a825;
+    margin-bottom: 10px;
+}
+
+/* ================= CALL TO ACTION ================= */
+
+.cta-section {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.cta-section .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 30px;
+    background: #f9a825;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.cta-section .btn:hover {
+    background: #f57f17;
+}
+
+/* ================= FORM / UPLOAD BOX ================= */
+
+.upload-box {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+
+.upload-box input,
+.upload-box button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.upload-box input {
+    border: 1px solid #ccc;
+}
+
+.upload-box input:focus {
+    outline: none;
+    border-color: #f9a825;
+}
+
+.upload-box button {
+    background: #f9a825;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.upload-box button:hover {
+    background: #f57f17;
+}
+
+/* ================= IMAGE UPLOAD ================= */
+
+.uploaded-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.image-placeholder {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto auto 15px;
+}
+
+/* ================= RESULT ================= */
+
+.result-text {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+.result-text span {
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+}
+
+/* ================= STAGES ================= */
+
+.stages-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stage {
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+    font-size: 22px;   /* increase size */
+    font-weight: 600;
+    text-align: center;
+}
+
+.stage img {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.green { background: #7cc576; }
+.orange { background: #f9a825; }
+.dark-orange { background: #ef6c00; }
+.red { background: #d84315; }
+
+/* ================= LOGIN / REGISTER ================= */
+
+.login-container,
+.register-container {
+    max-width: 900px;
+    margin: 50px auto;
+    display: flex;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.login-left,
+.register-left {
+    flex: 1;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-left img,
+.register-left img {
+    max-width: 100%;
+}
+
+.login-right,
+.register-right {
+    flex: 1;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ================= FLASH MESSAGE ================= */
+
+.alert {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    padding: 12px 22px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+}
+
+.alert.danger {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.alert.info {
+    background: #d1ecf1;
+    color: #0c5460;
+}
+
+/* ================= LOGOUT PAGE FIX (IMPORTANT) ================= */
+
+.logout-wrapper {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.logout-wrapper .upload-box {
+    position: static;
+    margin: 0 auto;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        margin-left: 10px;
+    }
+
+    .image-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .login-container,
+    .register-container {
+        flex-direction: column;
+        width: 95%;
+    }
+}

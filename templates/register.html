@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DR Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>DR Register</h2>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+</div>
+
+<!-- REGISTER CARD -->
+<div class="auth-wrapper">
+    <div class="auth-card">
+
+        <!-- Avatar -->
+        <div class="auth-avatar">
+            <img src="{{ url_for('static', filename='sample/register.jpeg') }}" alt="User">
+        </div>
+
+        <!-- Flash messages -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% for category, msg in messages %}
+            <div class="alert {{ category }}">{{ msg }}</div>
+          {% endfor %}
+        {% endwith %}
+
+        <!-- Form -->
+        <form method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="email" name="email" placeholder="Enter Email ID" required>
+            <input type="password" name="password" placeholder="Enter Password" required>
+
+            <button type="submit" class="dark-btn">Register</button>
+        </form>
+
+        <div class="auth-link">
+            Already have an account?
+            <a href="{{ url_for('login') }}">Login</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>

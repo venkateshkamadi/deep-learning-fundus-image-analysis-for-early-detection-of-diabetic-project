@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- AUTO HIDE FLASH -->
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".flash-message").forEach(msg => {
+            setTimeout(() => {
+                msg.style.opacity = "0";
+                msg.style.transform = "translateY(-10px)";
+                setTimeout(() => msg.remove(), 500);
+            }, 3000);
+        });
+    });
+    </script>
+</head>
+<body>
+
+<!-- 🔔 FLASH MESSAGE -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% for category, msg in messages %}
+    <div class="alert {{ category }} flash-message">
+        {{ msg }}
+    </div>
+  {% endfor %}
+{% endwith %}
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>DR Detector</h2>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+    </div>
+</div>
+
+<!-- ✅ LOGOUT CENTER WRAPPER -->
+<div class="logout-wrapper">
+    <div class="upload-box">
+        <h2>Logged Out Successfully</h2>
+        <p>See you again 👋</p>
+        <a href="{{ url_for('login') }}">
+            <button>Login Again</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

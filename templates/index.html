@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diabetic Retinopathy Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<div class="navbar">
+    <h2>Diabetic Retinopathy Classification</h2>
+    <div class="nav-links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('predict') }}">Prediction</a>
+    </div>
+</div>
+
+<!-- ================= MAIN CONTENT ================= -->
+<div class="main-container">
+
+    <!-- IMAGE SECTION -->
+    <div class="image-section">
+        <div class="image-box">
+            <h3>Normal Eye</h3>
+            <img src="{{ url_for('static', filename='sample/eye.jpeg') }}" alt="Normal Eye">
+            <p>Healthy retina with no visible damage. there is no damage this is healthy eye </p>
+        </div>
+
+        <div class="image-box">
+            <h3>Diabetic Retinopathy</h3>
+            <img src="{{ url_for('static', filename='sample/eye_damages.jpeg') }}" alt="Diabetic Retinopathy">
+            <p>Damaged retina due to diabetes complications.</p>
+        </div>
+    </div>
+
+    <!-- ABOUT PROJECT -->
+    <div class="about-section">
+        <h2>About Project</h2>
+
+        <div class="about-content">
+            <div class="problem">
+                <h3>Problem</h3>
+                <p>
+                    Diabetic Retinopathy (DR) is a serious eye disease caused by diabetes.
+                    If not detected early, it can lead to permanent vision loss.
+                    Manual screening is time-consuming and depends on specialist availability.
+                </p>
+            </div>
+
+            <div class="solution">
+                <h3>Solution</h3>
+                <p>
+                    This project uses Deep Learning and Transfer Learning techniques
+                    to automatically detect and classify Diabetic Retinopathy from
+                    retinal images, enabling faster and more reliable diagnosis.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CALL TO ACTION -->
+    <div class="cta-section">
+        <h2>Start Detection Now</h2>
+        <p>Upload a retinal image and get AI-powered predictions instantly.</p>
+        <a href="{{ url_for('login') }}" class="btn">Get Started</a>
+    </div>
+
+</div>
+
+</body>
+</html>
